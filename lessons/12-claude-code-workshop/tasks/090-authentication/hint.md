@@ -1,7 +1,9 @@
 <details>
-<summary>💡 Hint 1: Cookie flags and secrets deserve attention</summary>
+<summary>💡 Hint 1: No secret to manage is a feature, not a gap</summary>
 
-These are the details most worth your review time in this task.
+If the agent starts drafting an env var for a "JWT secret," stop it — native sessions don't need
+one. The cookie flags (httpOnly, SameSite) and session-id regeneration are what deserve your
+review time instead.
 
 </details>
 
