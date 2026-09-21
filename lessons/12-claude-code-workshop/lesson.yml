@@ -22,7 +22,7 @@
 #   pre-seeded local mirror) if the venue truly has zero access during the workshop itself; see
 #   each task's trainer_hint.md.
 
-name: 'AI React PHP: Claude Code Workshop'
+name: 'Claude Code Workshop(React/PHP/SQLite Version)'
 position: 11
 
 # Trainer (use email or slug to match existing trainer)
