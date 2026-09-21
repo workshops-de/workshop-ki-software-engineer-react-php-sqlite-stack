@@ -2,3 +2,4 @@
 /database/*.sqlite
 .phpunit.result.cache
 /rector-cache/
+/rector.runtime.*.php

@@ -214,10 +214,11 @@ npm install --save-dev @types/node
 ```
 
 ```
-tools/
-└── php-mcp/
-    ├── index.ts
-    └── tsconfig.json
+app/tools/php-mcp/
+├── src/
+│   └── index.ts
+├── package.json
+└── tsconfig.json
 ```
 
 ```json
@@ -226,10 +227,16 @@ tools/
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "outDir": "../../dist/php-mcp"
+    "rootDir": "./src",
+    "outDir": "./dist"
   }
 }
 ```
+
+<Callout type="warning">
+Keep <code>outDir</code> inside the tool's own folder. Pointing it outside (e.g. a shared
+<code>../../dist</code>) breaks Node's module resolution for <code>node_modules</code>.
+</Callout>
 
 <Callout type="info">
 The <strong>@modelcontextprotocol/sdk</strong> handles all protocol complexity — you focus on your tool logic.
@@ -327,8 +334,7 @@ Create or edit `~/.cursor/mcp.json`:
   "mcpServers": {
     "php-mcp": {
       "command": "node",
-      "args": ["/absolute/path/to/dist/php-mcp/index.js"],
-      "cwd": "/absolute/path/to/your/project"
+      "args": ["/absolute/path/to/app/tools/php-mcp/dist/index.js"]
     }
   }
 }
@@ -360,20 +366,16 @@ layoutClass: gap-4
 ### More Tool Ideas
 
 ```ts
-server.registerTool(
-  'run_migration',
-  {
-    description: 'Run automated PHP migration via Rector',
-    inputSchema: {
-      phpVersion: z.string().describe('Target PHP version, e.g. 8.3'),
-    },
-  },
-  async ({ phpVersion }) => {
-    const set = `php${phpVersion.replace('.', '')}`;
-    const cmd = `vendor/bin/rector process --set ${set}`;
-    // ...
-  }
-);
+// Rector has no "--set" flag — it reads rule sets
+// from a config file. Write a throwaway one per run:
+const SET = { '8.2': 'PHP_82', '8.3': 'PHP_83' }; // allow-list
+const cfg = `<?php
+use Rector\\Config\\RectorConfig;
+use Rector\\Set\\ValueObject\\SetList;
+return RectorConfig::configure()
+  ->withSets([SetList::${SET[phpVersion]}]);`;
+await writeFile(configPath, cfg);
+const cmd = `vendor/bin/rector process --config=${configPath}`;
 ```
 
 ::right::
