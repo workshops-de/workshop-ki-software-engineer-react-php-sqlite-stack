@@ -33,18 +33,20 @@ layoutClass: gap-4
 <WindowMockup codeblock title="suggestion.ts">
 
 ```typescript
-import { useAutoSave } from 'vue';
-// This package doesn't exist
+import { useAutoSave } from 'react';
+// This hook doesn't exist
 ```
 
 </WindowMockup>
 
 **Outdated pattern**
 
-<WindowMockup codeblock title="component.vue">
+<WindowMockup codeblock title="component.tsx">
 
-```vue
-export default { data() { return { count: 0 } } } // Vue 3 Composition API ignored
+```tsx
+class Counter extends React.Component {
+  state = { count: 0 } // Hooks ignored
+}
 ```
 
 </WindowMockup>

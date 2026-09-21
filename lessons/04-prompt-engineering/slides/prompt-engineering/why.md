@@ -64,7 +64,7 @@ layoutClass: gap-4
 **Vague**
 
 ```text
-Write a Vue component
+Write a React component
 ```
 
 → Generic, no requirements, no context
@@ -74,9 +74,9 @@ Write a Vue component
 **Structured**
 
 ```text
-You are a senior Vue.js architect.
-Create a login form using Composition API
-with TypeScript, Zod validation,
+You are a senior React architect.
+Create a login form using functional
+components with TypeScript, Zod validation,
 and Vitest unit tests.
 ```
 

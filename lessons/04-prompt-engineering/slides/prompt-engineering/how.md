@@ -42,7 +42,7 @@ layoutClass: gap-4
 
 _Problem: Component not re-rendering_
 
-Prompt: _"Think step by step about Vue's reactivity system and why this component might not update when the prop changes."_
+Prompt: _"Think step by step about React's rendering behavior and why this component might not update when the prop changes."_
 
 → AI explains the issue and provides a targeted fix.
 
@@ -50,7 +50,7 @@ Prompt: _"Think step by step about Vue's reactivity system and why this componen
 
 **Few-Shot for Refactoring**
 
-_Problem: Convert Options API to Composition API_
+_Problem: Convert class components to function components with hooks_
 
 Prompt: Show 2–3 example conversions, then: _"Now convert the following using the same pattern."_
 

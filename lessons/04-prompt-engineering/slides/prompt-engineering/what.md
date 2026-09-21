@@ -26,7 +26,7 @@ Give the AI a professional identity to shape its vocabulary and focus.
 <WindowMockup codeblock title="prompt.txt">
 
 ```text
-You are a senior Vue.js architect
+You are a senior React architect
 specializing in TypeScript.
 
 Your task is to review this component
@@ -55,11 +55,12 @@ Provide complete, specific instructions with all requirements upfront.
 <WindowMockup codeblock title="prompt.txt">
 
 ```text
-Create a Vue component using Composition API:
-- Use <script setup lang="ts">
+Create a React component using function
+components:
+- Use TypeScript with a typed props interface
 - Define prop "user": { id: number; name: string }
 - Add Vitest unit tests
-- Return: (1) .vue file, (2) test file
+- Return: (1) component file, (2) test file
 ```
 
 </WindowMockup>
@@ -85,7 +86,7 @@ Ask the AI to reason step by step before providing a solution.
 
 ```text
 Explain step by step how you would
-validate props in a Vue component.
+validate props in a React component.
 
 First think about the design,
 then typing, then the test.
@@ -112,15 +113,16 @@ Provide examples in the prompt to teach the AI your desired pattern or style.
 
 <WindowMockup codeblock title="prompt.txt">
 
-```vue
-<!-- Example 1 -->
-<script setup lang="ts">
-const count = ref(0);
-</script>
+```tsx
+// Example 1
+function Counter() {
+  const [count, setCount] = useState(0);
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
+}
 
-<!-- Now create a component that
-     tracks selected items in a list,
-     following this exact pattern. -->
+// Now create a component that
+// tracks selected items in a list,
+// following this exact pattern.
 ```
 
 </WindowMockup>
@@ -145,7 +147,7 @@ Build complex results through multiple focused refinement steps.
 <WindowMockup codeblock title="prompt.txt">
 
 ```text
-Step 1: "Write a Vue login form component"
+Step 1: "Write a React login form component"
 → Basic component generated
 
 Step 2: "Add TypeScript props and validation"

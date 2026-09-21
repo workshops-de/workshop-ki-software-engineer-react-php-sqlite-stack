@@ -50,7 +50,7 @@ import { getBuiltInRatings } from 'web-codegen-scorer';
 export default {
   displayName: 'agentic-coding-scorer',
   skipInstall: true,
-  clientSideFramework: 'angular',
+  clientSideFramework: 'react',
   sourceDirectory: 'project',
   ratings: [...getBuiltInRatings()],
   generationSystemPrompt: './<your-instructions>.md',
@@ -71,7 +71,7 @@ layout: default
 ```bash{*|1|3|5|7|*}
 export GEMINI_API_KEY="..🤖.."
 
-web-codegen-scorer eval --env=angular-example
+web-codegen-scorer eval --env=react-example
 
 web-codegen-scorer report
 
@@ -80,7 +80,9 @@ web-codegen-scorer run --prompt=<generated-app> --env=<path>
 
 </WindowMockup>
 
-https://github.com/GregOnNet/web-codegen-scorer-playground.git
+<Callout type="info">
+<code>web-codegen-scorer</code> (by the Angular team) natively supports <code>clientSideFramework: 'react'</code> and <code>'next'</code> — no Angular-specific setup required.
+</Callout>
 
 ---
 layout: image-right

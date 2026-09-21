@@ -21,7 +21,7 @@ Every word (or word fragment) is split into **tokens** and mapped to an ID.
 | -------- | ----------------- | ---------------- |
 | `I`      | `I`               | 521              |
 | `love`   | `love`            | 2407             |
-| `Vue.js` | `Vu` `e` `.` `js` | 119, 83, 13, 542 |
+| `React.js` | `Re` `act` `.` `js` | 119, 83, 13, 542 |
 
 ::right::
 
@@ -65,7 +65,7 @@ layout: center
 
   <!-- Word as a point -->
   <circle cx="250" cy="100" r="6" fill="#6366f1" />
-  <text x="260" y="95" font-size="4" font-weight="bold" fill="currentColor">"Vue"</text>
+  <text x="260" y="95" font-size="4" font-weight="bold" fill="currentColor">"React"</text>
 
   <!-- Vector representation -->
   <line x1="100" y1="180" x2="250" y2="100" stroke="#6366f1" stroke-width="2" stroke-dasharray="5,5" />
@@ -94,7 +94,7 @@ Each token is converted to a **vector** — a point in high-dimensional space.
 **Semantically similar tokens cluster together:**
 
 - `developer` ≈ `programmer` ≈ `coder`
-- `Vue` ≈ `React` (both frameworks)
+- `React` ≈ `Preact` (both UI libraries)
 - `function` ≈ `method`
 
 **Unrelated tokens are far apart:**
@@ -316,9 +316,9 @@ The result: a weighted mix of Values — what the token "knows" after reading co
 
 ::right::
 
-**Example:** `"The developer who loves Vue writes clean code."`
+**Example:** `"The developer who loves React writes clean code."`
 
-When processing `Vue`:
+When processing `React`:
 
 - 60% attention → `loves` (relationship)
 - 30% attention → `developer` (subject)
@@ -338,10 +338,10 @@ Instead of one attention pass, the model runs **multiple heads in parallel** —
 
 ```mermaid
 flowchart TD
-  I["Input: 'The developer loves Vue'"]
+  I["Input: 'The developer loves React'"]
   I --> H1["Head 1\nSyntax focus\ndeveloper → loves"]
-  I --> H2["Head 2\nSubject focus\ndeveloper → Vue"]
-  I --> H3["Head 3\nObject focus\nloves → Vue"]
+  I --> H2["Head 2\nSubject focus\ndeveloper → React"]
+  I --> H3["Head 3\nObject focus\nloves → React"]
   H1 --> O[Combined Output]
   H2 --> O
   H3 --> O

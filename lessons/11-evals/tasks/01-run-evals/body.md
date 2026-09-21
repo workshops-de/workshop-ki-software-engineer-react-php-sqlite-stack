@@ -1,26 +1,39 @@
-- **Start your eval-journey** by cloning the playground from GitHub
-    ```bash
-    git clone https://github.com/GregOnNet/web-codegen-scorer-playground.git
-    cd web-codegen-scorer-playground
-    npm install
-    ```
+- **Start your eval-journey** by installing `web-codegen-scorer` directly into the Bookmonkey frontend
+  ```bash
+  cd app/frontend
+  npm install --save-dev web-codegen-scorer
+  ```
 ---
-- **Provide your API-Key** for Anthrophic's models
+- **Create an environment config** at `app/frontend/eval.config.mjs`, modeled on the [official React/Next.js setup](https://github.com/angular/web-codegen-scorer):
+  ```js
+  import { getBuiltInRatings } from 'web-codegen-scorer';
+
+  export default {
+    displayName: 'bookmonkey-react',
+    clientSideFramework: 'react',
+    sourceDirectory: '.',
+    ratings: [...getBuiltInRatings()],
+    generationSystemPrompt: './eval-system-instructions.md',
+    executablePrompts: ['./eval-prompts/**/*.md'],
+  };
+  ```
+---
+- **Provide your API-Key** for Anthropic's models
   ```bash
   export ANTHROPIC_API_KEY="sk-ant-..."
   ```
 ---
 - **Run your 1st evaluation**
   ```bash
-  npm run eval.opus
+  npx web-codegen-scorer eval --env=./eval.config.mjs
   ```
 ---
 - *Study* the report carefully
   ```bash
-  npm run report
+  npx web-codegen-scorer report
   ```
 ---
 - **Run more** evaluations
-  1. Improve your `AGENTS.md` to score better results
-  1. Improve the `goal-tracker`-prompt to score better results
-  1. Remove the prompt-filter in `package.json > eval.opus` to execute multiple prompts in parallel
+  1. Improve your `AGENTS.md` (repo root) to score better results
+  1. Improve your eval prompts in `eval-prompts/` to score better results
+  1. Add more prompts to `eval-prompts/**/*.md` to execute multiple evaluations in parallel

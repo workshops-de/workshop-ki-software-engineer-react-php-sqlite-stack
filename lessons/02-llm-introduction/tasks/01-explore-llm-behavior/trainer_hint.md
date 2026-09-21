@@ -12,7 +12,7 @@
 
 ### Discussion Points
 
-- Why do you think the tokenizer splits `Vue.js` into 4 tokens instead of 1?
+- Why do you think the tokenizer splits `React.js` into 4 tokens instead of 1?
 - What are the implications of hallucination for code review workflows when using AI assistance?
 - How would you design a production prompt to minimize primacy/recency bias?
 

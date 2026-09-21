@@ -41,12 +41,12 @@ Ask about the latest framework version → model describes an older release and 
 
 ```typescript {1-3|5-7|9-11}
 // 1. Retrieval-Augmented Generation
-const docs = await fetchDocs('vue@3.5');
+const docs = await fetchDocs('react@19');
 const answer = llm.generate(docs + prompt);
 
 // 2. Date-aware prompting
 prompt = `As of ${new Date().toISOString()},
-          using Vue ${version}...`;
+          using React ${version}...`;
 ```
 
 </WindowMockup>
@@ -91,8 +91,8 @@ await typeCheck(generatedCode)
 await lintCode(generatedCode)
 
 // 3. Explicit constraints
-"Only use APIs from Vue 3.4 official docs.
- Do not invent new methods.
+"Only use APIs from the React 19 official docs.
+ Do not invent new hooks.
  Verify each import exists."
 ```
 
@@ -197,9 +197,9 @@ Later instructions can override earlier constraints — even system-level ones.
 <WindowMockup>
 
 ```typescript
-// System: "You are a Vue 3 expert"
-// User:   "Write React code"
-// → Model switches to React
+// System: "You are a React expert"
+// User:   "Write this with jQuery instead"
+// → Model switches to jQuery
 ```
 
 </WindowMockup>
@@ -214,9 +214,9 @@ Reinforce constraints explicitly around the user request.
 
 ```typescript
 const prompt = `
-  Remember: Vue 3 Composition API only.
+  Remember: React with hooks only.
   ${userRequest}
-  Use Vue 3 Composition API only.
+  Use React with hooks only.
 `;
 ```
 

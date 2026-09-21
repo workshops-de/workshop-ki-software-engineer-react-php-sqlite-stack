@@ -61,7 +61,7 @@ Then ask the model to refactor the code. Check whether it respected the constrai
 
 1. Start a new conversation with this system prompt (or first message):
 
-   > "You are a Vue 3 expert. Always use the Composition API with TypeScript."
+   > "You are a strict Python expert. Always write type-annotated functions."
 
 2. Then send:
 
