@@ -21,8 +21,9 @@ final class BookController
         $search = $params['q'] ?? null;
 
         $books = $this->books->findAll($limit, $search);
+        $serialize = fn (array $book): array => $this->serialize($book, $request);
 
-        return $this->json($response, array_map($this->serialize(...), $books));
+        return $this->json($response, array_map($serialize, $books));
     }
 
     public function show(Request $request, Response $response, array $args): Response
@@ -33,7 +34,7 @@ final class BookController
             return $this->json($response, ['error' => 'Book not found'], 404);
         }
 
-        return $this->json($response, $this->serialize($book));
+        return $this->json($response, $this->serialize($book, $request));
     }
 
     public function create(Request $request, Response $response): Response
@@ -41,7 +42,7 @@ final class BookController
         $data = (array) $request->getParsedBody();
         $book = $this->books->create($data);
 
-        return $this->json($response, $this->serialize($book), 201);
+        return $this->json($response, $this->serialize($book, $request), 201);
     }
 
     public function update(Request $request, Response $response, array $args): Response
@@ -53,7 +54,7 @@ final class BookController
             return $this->json($response, ['error' => 'Book not found'], 404);
         }
 
-        return $this->json($response, $this->serialize($book));
+        return $this->json($response, $this->serialize($book, $request));
     }
 
     public function delete(Request $request, Response $response, array $args): Response
@@ -69,8 +70,10 @@ final class BookController
 
     /**
      * Maps the snake_case database row to the camelCase shape the frontend expects.
+     * Cover paths are stored relative (e.g. "/covers/9780747532699.png") and resolved
+     * to an absolute URL here, so the frontend can render them directly.
      */
-    private function serialize(array $book): array
+    private function serialize(array $book, Request $request): array
     {
         return [
             'id' => (string) $book['id'],
@@ -81,10 +84,21 @@ final class BookController
             'publisher' => $book['publisher'],
             'numPages' => $book['num_pages'] !== null ? (int) $book['num_pages'] : null,
             'price' => $book['price'],
-            'cover' => $book['cover'],
+            'cover' => $this->resolveCoverUrl($book['cover'], $request),
             'abstract' => $book['abstract'],
             'userId' => (int) $book['user_id'],
         ];
+    }
+
+    private function resolveCoverUrl(?string $cover, Request $request): ?string
+    {
+        if ($cover === null || $cover === '' || str_starts_with($cover, 'http')) {
+            return $cover;
+        }
+
+        $uri = $request->getUri();
+
+        return $uri->getScheme() . '://' . $uri->getAuthority() . $cover;
     }
 
     private function json(Response $response, mixed $data, int $status = 200): Response
