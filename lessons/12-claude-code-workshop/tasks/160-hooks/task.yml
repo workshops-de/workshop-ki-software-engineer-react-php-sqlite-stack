@@ -1,5 +1,5 @@
 # Task Configuration
-title: 'Add a Format and a Secrets Guard Hook'
+title: 'Hooks: Add a Format and a Secrets Guard Hook'
 position: 160
 category: 'Claude Code Building Blocks'
 preparation: false

@@ -1,5 +1,5 @@
 # Task Configuration
-title: 'Delegate Exploration to a Subagent'
+title: 'Subagents: Delegate Exploration to a Subagent'
 position: 150
 category: 'Claude Code Building Blocks'
 preparation: false
