@@ -6,6 +6,21 @@
 # source workshop, participants own every line of code they write. The Bookmonkey app in this
 # repo's app/ folder is domain inspiration only (analogous to pawsaw/clash in the source
 # workshop), not starter code.
+#
+# OFFLINE / AIR-GAPPED DELIVERY: this lesson was adapted for a customer venue with no outbound
+# network access during the session. Changes made for that:
+# - Domain simplified to a single "book" entity (+ optional reviews) with checkout/return -
+#   dropped the multi-entity/geo-map version to stay simple and dependency-light.
+# - Removed all "npx skills add vercel-labs/..." / "vercel/vercel-plugin@..." marketplace
+#   installs (tasks 060, 130, 170) - these fetch from an external registry at runtime.
+# - Replaced the Leaflet + OpenStreetMap map task (external tile server) with a client-only
+#   cover-image upload/preview task (task 110) that keeps the same "state the constraint up
+#   front" lesson without any outbound call.
+# - Dropped shadcn/ui in favour of plain Tailwind CSS (one fewer external CLI/registry).
+# - Tasks 010 (install Claude Code), 015 (workshop API key), 260 (Spec Kit), and 270 (BMAD) still
+#   need one-time installs from npm/PyPI/GitHub - these must happen BEFORE the session (or via a
+#   pre-seeded local mirror) if the venue truly has zero access during the workshop itself; see
+#   each task's trainer_hint.md.
 
 name: 'AI React PHP: Claude Code Workshop'
 position: 11

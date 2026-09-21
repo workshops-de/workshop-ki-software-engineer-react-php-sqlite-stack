@@ -8,8 +8,8 @@
 <details>
 <summary>💡 Hint 2: Watch for optional relationships</summary>
 
-Not every book has an active borrow request — model that explicitly rather than assuming
-everything is required.
+Not every book has a review yet — model that relationship as optional/zero-or-many rather than
+assuming everything is required.
 
 </details>
 

@@ -1,24 +1,28 @@
 ## Overview
 
-Connect Claude Code to an external system through the **Model Context Protocol (MCP)** and use it
-to close the feedback loop on something the agent otherwise can't see — such as the running
-application in a real browser. You will also weigh the trade-off: MCP extends reach, but tool
-schemas cost context.
+Connect Claude Code to another **local** system through the **Model Context Protocol (MCP)** and
+use it to close the feedback loop on something the agent otherwise can't see — such as the running
+application in a real, local browser. "External" here means "outside your files," not "outside
+your machine": everything in this task talks to `localhost` only. You will also weigh the
+trade-off: MCP extends reach, but tool schemas cost context.
 
 ## Prerequisites
 
-- Recommended: `agent-browser` (`npx skills add vercel-labs/agent-browser@agent-browser -y`)
+- None external. A browser-automation MCP server that drives a **local** Chromium/Chrome instance
+  (for example a Playwright-based MCP server, installed as a normal npm package) is enough — it
+  does not call out to any cloud service.
 
 ## Background
 
 MCP is an open standard for discovering and calling external tools and resources. A server can
-expose a browser, a database, a project tracker, or your own custom tooling. This lets the agent
-observe and act on systems beyond your files.
+expose a browser, a database, a project tracker, or your own custom tooling — all running
+locally in this workshop. This lets the agent observe and act on systems beyond your files,
+without any of it leaving your machine.
 
 ## Steps
 
-1. Add an MCP server to your Claude Code configuration — a browser-automation server is a good
-   choice — and confirm the agent can list its new tools.
+1. Add an MCP server to your Claude Code configuration — a **local** browser-automation server is
+   a good choice — and confirm the agent can list its new tools.
 2. Start your application's development server.
 3. Ask the agent to use the MCP browser tools to **verify the running app**: open it, sign in with
    a seeded account, navigate to a list, and confirm content renders. Have it report what it saw.

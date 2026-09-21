@@ -69,24 +69,36 @@ Details siehe [`app/README.md`](./app/README.md).
 | 09  | Model Context Protocol        | MCP-Server generiert React-Komponenten & PHP-Controller statt Angular-Code       |
 | 10  | Agentic Workflow               | unverändert (stack-agnostisch, GitHub Actions)                                 |
 | 11  | Evals                          | unverändert (Tool ist stack-agnostisch)                                        |
-| 12  | Claude Code Workshop           | adaptiert von [`workshop-claude-code`](https://github.com/workshops-de/workshop-claude-code) (27 Tasks, gleiches Nummernschema); Referenz-Domäne "Bookmonkey Community" (Bücher ausleihen) statt "Clash"; **Slides fehlen noch** (siehe `lesson.yml`) |
+| 12  | Claude Code Workshop           | adaptiert von [`workshop-claude-code`](https://github.com/workshops-de/workshop-claude-code) (28 Tasks, gleiches Nummernschema); vereinfachte, **offline-fähige** Referenz-Domäne (Bücher anlegen/editieren + Checkout) statt "Clash"; **Slides fehlen noch** (siehe `lesson.yml`) |
 
 Details zur Migrationsentscheidung: siehe Konzept-Zusammenfassung im PR/Commit-Verlauf.
 
 ### Lesson 12: Claude Code Workshop
 
 Diese Lesson ist strukturell 1:1 von [`workshop-claude-code`](https://github.com/workshops-de/workshop-claude-code)
-übernommen (27 Tasks, gestuftes Nummernschema `010`–`270`, keine vorbereiteten Solution-Branches —
+übernommen (28 Tasks, gestuftes Nummernschema `010`–`270`, keine vorbereiteten Solution-Branches —
 Teilnehmer besitzen jeden Code, den sie schreiben, wie im Original). Referenz-App ist nicht
-[`pawsaw/clash`](https://github.com/pawsaw/clash), sondern eine erweiterte **"Bookmonkey
-Community"**-Domäne (Bücher ausleihen: Nutzer bieten Bücher zum Verleih an, andere fragen an, der
-Besitzer akzeptiert/lehnt ab) auf Next.js + PHP/Slim + SQLite — analog zu unserem `app/`-Ordner,
-aber bewusst **kein Startcode**: Teilnehmer bauen alles selbst auf.
+[`pawsaw/clash`](https://github.com/pawsaw/clash), sondern eine bewusst **einfache** Bookmonkey-
+Variante (Bücher anlegen/editieren, Cover-Upload, ein simpler Checkout/Return-Workflow) auf
+Next.js + PHP/Slim + SQLite — analog zu unserem `app/`-Ordner, aber **kein Startcode**: Teilnehmer
+bauen alles selbst auf.
 
-7 der 27 Tasks (`060`–`120`, "Building Bookmonkey") enthalten echte Architektur-Anpassungen
-gegenüber dem Original (Next.js-Monolith mit Prisma/Server-Actions → getrennte Next.js-Frontend +
-PHP/Slim-Backend-Architektur mit PDO/SQLite). Die restlichen 20 Tasks sind Claude-Code-Tool-Wissen
-und praktisch stack-agnostisch, daher nahezu unverändert übernommen.
+**Wichtig — für einen Kunden mit komplett offline/air-gapped Umgebung angepasst:**
+- Keine Vercel-Skills-Marketplace-Installs mehr (`npx skills add vercel/...` in den Tasks 060,
+  130, 170 entfernt)
+- Kein shadcn/ui (externe Component-Registry) — nur reines Tailwind CSS
+- Kartenaufgabe (Leaflet + OpenStreetMap-Kacheln = externe Netzwerkzugriffe) ersetzt durch einen
+  rein client-seitigen Cover-Upload mit Vorschau (Task `110`) — gleiche Lernlektion ("harte
+  Constraints vorher benennen"), ohne jeden externen Call
+- Domäne stark vereinfacht: nur "Book" (+ optional Reviews) statt einer komplexen
+  Zwei-Parteien-Workflow-Domäne mit Venues/Notifications
+- Tasks `010`, `015`, `260`, `270` brauchen weiterhin einmalige Installs aus dem Netz (Claude
+  Code selbst, Spec Kit, BMAD) — siehe die jeweiligen `trainer_hint.md` für Vorbereitungs-Hinweise
+
+Details zu allen Architektur-Anpassungen (Tasks `060`–`120`, "Building Bookmonkey": Next.js-
+Monolith mit Prisma/Server-Actions → getrennte Next.js-Frontend + PHP/Slim-Backend-Architektur mit
+PDO/SQLite) stehen in den jeweiligen `body.md`/`trainer_hint.md`-Dateien. Die restlichen ~20 Tasks
+sind reines Claude-Code-Tool-Wissen und praktisch stack-agnostisch.
 
 **Offen:** Die Slides (Google Slides im Original) fehlen noch für diese Lesson.
 

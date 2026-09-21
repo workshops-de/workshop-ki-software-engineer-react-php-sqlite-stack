@@ -7,14 +7,15 @@
 
 ## Facilitation notes
 
-- Known pitfall: dangling nav links to pages not built yet (map, books, bookstores) will 404 until
-  their tasks — reassure participants this is expected.
-- The shadcn CLI's interactive prompts are a common stall point; watch for participants who think
-  the process hung.
+- Known pitfall: dangling nav links to pages not built yet will 404 until their tasks — reassure
+  participants this is expected.
 - Participants coming from a Next.js-only background may expect the backend to also be Next.js
   (API routes/Server Actions) — this workshop deliberately keeps it split (separate PHP process)
-  to mirror the rest of this course. Flag this early so nobody scaffolds a Prisma schema by
-  reflex.
+  to mirror the rest of this course. Flag this early.
+- **This workshop runs fully offline/air-gapped at this customer.** If the agent proposes
+  anything that needs an external account or network call at generation or run time (a UI-kit CLI
+  that fetches component source from a registry, a deployment step, telemetry) — redirect it to a
+  local-only alternative before it gets stuck retrying a request that will never succeed.
 - This is the first "real" building task after the Foundations morning — energy is usually high;
   keep the scope disciplined so later tasks have room to build on a clean base.
 

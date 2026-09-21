@@ -1,9 +1,9 @@
 # Task Configuration
-title: 'Implement Join, Accept, and Reject'
-position: 120
+title: 'Add a Client-Only Cover Upload with Preview'
+position: 110
 category: 'Building Bookmonkey'
 preparation: false
-estimated_time_in_minutes: 60
+estimated_time_in_minutes: 45
 always_unlocked: false
 
 # No git integration: there is no prepared repository or solution branch.

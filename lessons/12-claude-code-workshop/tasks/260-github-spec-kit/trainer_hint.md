@@ -13,6 +13,11 @@
   If the room is behind schedule, treat the "change one requirement" step as optional/stretch
   rather than cutting the core flow.
 - `uv` install issues are the most common blocker — verify it during setup, not mid-task.
+- **Offline/air-gapped delivery:** Spec Kit's CLI is installed from PyPI/GitHub at setup time —
+  this needs to happen *before* the session (pre-install on every machine, or vendor it into a
+  local package cache/mirror) if the venue has no outbound network access during the workshop
+  itself. If pre-installation isn't possible, mark this task optional/skip it rather than losing
+  time to failed installs live.
 
 ## Time estimate
 

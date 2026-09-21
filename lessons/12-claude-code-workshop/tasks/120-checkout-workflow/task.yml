@@ -1,6 +1,6 @@
 # Task Configuration
-title: 'Add an Interactive Map to Your App'
-position: 110
+title: 'Implement Checkout, Return, and an Activity Log'
+position: 120
 category: 'Building Bookmonkey'
 preparation: false
 estimated_time_in_minutes: 45

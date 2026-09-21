@@ -7,8 +7,10 @@ when relevant, keeping context lean.
 
 ## Prerequisites
 
-- **Required:** `find-skills` (`npx skills add vercel-labs/skills@find-skills -y`) — discover
-  existing skills and study their structure before authoring your own.
+- None external. If your Claude Code installation already has any skills configured locally
+  (check `.claude/skills/` in this repo or `~/.claude/skills/`), read one first to see the shape
+  before authoring your own — there's no need to fetch anything from an online marketplace to do
+  that.
 
 ## Background
 

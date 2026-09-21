@@ -13,10 +13,10 @@ If the agent proposes libraries you didn't ask for, question them before accepti
 </details>
 
 <details>
-<summary>💡 Hint 3: The shadcn CLI is interactive</summary>
+<summary>💡 Hint 3: Push back on anything that needs an account or a network call</summary>
 
-Its `init` can still prompt (e.g. "Which preset?") even with `--yes` — let the agent answer it.
-Its flags also change: `-b` now selects the component library, not a colour, so check
-`init --help` rather than copying old commands.
+No deployment integration, no third-party component-registry CLI, no telemetry opt-ins — if the
+agent's plan includes signing into or fetching from an external service, redirect it to a plain,
+locally-installed alternative.
 
 </details>

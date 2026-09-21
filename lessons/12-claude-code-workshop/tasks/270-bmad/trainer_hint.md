@@ -13,6 +13,9 @@
   over completing every story.
 - Close the workshop by revisiting the participant goals captured on the very first morning and
   comparing the ad-hoc, Spec Kit, and BMAD approaches side by side.
+- **Offline/air-gapped delivery:** same note as Spec Kit — BMAD is installed from npm/GitHub at
+  setup time. Pre-install on every machine (or vendor it into a local mirror) before a venue with
+  no outbound network access during the session, or mark the task optional/skip it.
 
 ## Time estimate
 
