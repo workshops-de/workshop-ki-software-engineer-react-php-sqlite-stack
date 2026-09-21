@@ -1,0 +1,24 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - '8080:8080'
+    volumes:
+      - backend-db:/app/database
+    healthcheck:
+      test: ['CMD', 'php', '-r', "echo file_get_contents('http://localhost:8080/health');"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  frontend:
+    build: ./frontend
+    ports:
+      - '3000:3000'
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8080
+    depends_on:
+      - backend
+
+volumes:
+  backend-db:
