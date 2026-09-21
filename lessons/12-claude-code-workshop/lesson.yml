@@ -1,0 +1,33 @@
+# Lesson configuration for repository import
+# This file defines the lesson metadata that will be synced to the platform
+#
+# Adapted from https://github.com/workshops-de/workshop-claude-code (27 tasks, structure and
+# task-numbering scheme kept 1:1). No prepared repository/solution branch on purpose: like the
+# source workshop, participants own every line of code they write. The Bookmonkey app in this
+# repo's app/ folder is domain inspiration only (analogous to pawsaw/clash in the source
+# workshop), not starter code.
+
+name: 'AI React PHP: Claude Code Workshop'
+position: 11
+
+# Trainer (use email or slug to match existing trainer)
+# TODO: replace with the actual trainer email before going live
+trainer: trainer@workshops.de
+
+# No git integration: there is no prepared repository or solution branch (see above).
+
+# Presentation type: "google_slides" or "slidev"
+# TODO: slides not built yet - see AskQuestion decision "no_slides_yet". Fill in once authored,
+# either as a new Slidev deck (consistent with the rest of this repo) or a dedicated Google Slides
+# deck.
+slides_type: slidev
+
+# PDF sync (works for both Google Slides and Slidev)
+pdf_generation_enabled: true
+
+# Playground options
+stackblitz_enabled: false
+codesandbox_enabled: false
+
+# Status
+deprecated: false
