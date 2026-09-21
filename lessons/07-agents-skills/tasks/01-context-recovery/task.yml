@@ -1,0 +1,8 @@
+# Task Configuration
+title: 'Context Recovery Skill'
+position: 0s
+category: 'Skills'
+preparation: false
+estimated_time_in_minutes: 5
+always_unlocked: false
+git_tag_completed: solution--skills-ce-recovery

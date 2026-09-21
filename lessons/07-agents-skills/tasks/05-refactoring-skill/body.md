@@ -1,0 +1,3 @@
+- **Create a skill for refactoring** in `.cursor/skills`
+- **Let the skill** refactor React components (`app/frontend`) and PHP classes (`app/backend`) according to your project standards and SOLID principles—e.g. one component/class per file, consistent abstraction levels, hooks instead of side effects in render, dependency injection instead of static calls in PHP
+- **Purpose:** The Refactor step in Red-Green-Refactor; use it after Green to clean up the implementation and keep the codebase aligned with your conventions across both the React frontend and the PHP backend
