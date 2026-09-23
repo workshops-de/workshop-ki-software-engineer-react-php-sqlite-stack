@@ -13,7 +13,7 @@ your main context.
 
 ## Steps
 
-1. Pick a research question about your own codebase — for example, "where are borrow-request state
+1. Pick a research question about your own codebase — for example, "where are book checkout state
    transitions handled, and what's the flow?"
 2. Delegate it to a **read-only explorer subagent** and ask for a concise summary.
 3. Check your **main** context usage and note that it stayed lean despite the exploration.

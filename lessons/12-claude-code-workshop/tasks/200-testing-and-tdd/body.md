@@ -5,7 +5,8 @@ development** with an agent — letting tests give it a built-in "done" signal.
 
 ## Prerequisites
 
-- Recommended: `agent-browser` for end-to-end browser flows.
+- Recommended: any local browser-automation MCP tool already configured for this workshop for
+  end-to-end browser flows.
 
 ## Background
 

@@ -6,7 +6,8 @@ debugging with an agent is mostly about supplying good context.
 
 ## Prerequisites
 
-- Recommended: `agent-browser` for reproducing and inspecting UI bugs in a real browser.
+- Recommended: any local browser-automation MCP tool already configured for this workshop (see
+  the MCP task) for reproducing and inspecting UI bugs in a real browser.
 
 ## Background
 

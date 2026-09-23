@@ -32,10 +32,11 @@ trainer: trainer@workshops.de
 # No git integration: there is no prepared repository or solution branch (see above).
 
 # Presentation type: "google_slides" or "slidev"
-# TODO: slides not built yet - see AskQuestion decision "no_slides_yet". Fill in once authored,
-# either as a new Slidev deck (consistent with the rest of this repo) or a dedicated Google Slides
-# deck.
-slides_type: slidev
+slides_type: google_slides
+
+# Copied from the source workshop's Google Slides deck and adapted for this stack/domain.
+# https://docs.google.com/presentation/d/17_6AYDPz5ZJOYnygHeESIRJvs6xlbgkrlKRVmCkEznQ/edit
+google_slide_id: '17_6AYDPz5ZJOYnygHeESIRJvs6xlbgkrlKRVmCkEznQ'
 
 # PDF sync (works for both Google Slides and Slidev)
 pdf_generation_enabled: true
