@@ -21,15 +21,15 @@ without any of it leaving your machine.
 
 ## Steps
 
-1. Add an MCP server to your Claude Code configuration — a **local** browser-automation server is
-   a good choice — and confirm the agent can list its new tools.
+1. Ask the agent to add an MCP server entry to your Claude Code configuration — a **local**
+   browser-automation server is a good choice — and confirm it can list its new tools.
 2. Start your application's development server.
 3. Ask the agent to use the MCP browser tools to **verify the running app**: open it, sign in with
    a seeded account, navigate to a list, and confirm content renders. Have it report what it saw.
 4. Consider the **context cost**: identify a simple check where a command-line tool would be
    leaner than an MCP tool, and explain why.
-5. Optionally connect a second server relevant to your stack (for example, a database server) and
-   have the agent inspect a table.
+5. Optionally ask it to connect a second server relevant to your stack (for example, a database
+   server) and inspect a table.
 6. Reflect on which external systems are worth exposing to the agent in your real work.
 
 ## Success Criteria

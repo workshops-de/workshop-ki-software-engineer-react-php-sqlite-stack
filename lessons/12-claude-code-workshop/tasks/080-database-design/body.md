@@ -28,7 +28,8 @@ own).
    different states, and a few reviews.
 5. **Verify** by querying the database directly (`sqlite3 your.db "SELECT * FROM ...;"` or a local
    GUI like DB Browser for SQLite) and confirming it matches your model.
-6. Record the database commands (migrate, seed, and how to reset/re-seed) in your project memory.
+6. Ask the agent to record the database commands (migrate, seed, and how to reset/re-seed) in
+   your project memory.
 
 ## Success Criteria
 

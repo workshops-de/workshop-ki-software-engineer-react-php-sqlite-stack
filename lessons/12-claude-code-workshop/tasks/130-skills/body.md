@@ -24,12 +24,12 @@ release.
 1. Identify the procedure to encode — the feature-adding pattern from your earlier UI work (schema
    change → validated PHP endpoint → frontend fetch/mutation helper → component → quality
    checks).
-2. Author a skill that captures those steps, with a **concise, trigger-friendly description** so
-   the agent knows when to use it.
+2. Ask the agent to **draft a skill** that captures those steps, with a **concise,
+   trigger-friendly description** so it knows when to use it.
 3. In a fresh session, give the agent a task that should match the skill (for example, "add a field
    to an entity") and confirm it **invokes the skill** and follows the steps — without being told
    to.
-4. Refine the description and body based on what the agent did or missed.
+4. Ask the agent to refine the description and body based on what it did or missed.
 5. Reflect on when you would reach for a skill versus putting the same content in project memory.
 
 ## Success Criteria

@@ -20,10 +20,11 @@ feedback loop available to them. Agents won't reliably do TDD unless you ask, so
    lives in the frontend), review them, then implement the minimal code to pass.
 2. Before the implementation, review the tests and ask the agent to enumerate **edge cases**; add
    any it missed.
-3. Add an **integration test** that exercises a write against an ephemeral database.
-4. Add one **end-to-end test** for a critical path.
-5. Wire the **quality gates** (type-check, lint, build, tests) into a single command the agent can
-   run, and record it in project memory.
+3. Ask the agent to add an **integration test** that exercises a write against an ephemeral
+   database.
+4. Have it add one **end-to-end test** for a critical path.
+5. Have the agent wire the **quality gates** (type-check, lint, build, tests) into a single
+   command it can run itself, and record it in project memory.
 6. Reflect on how having a runnable test loop changed the agent's behaviour.
 
 ## Success Criteria

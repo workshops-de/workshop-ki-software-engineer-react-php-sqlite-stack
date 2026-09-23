@@ -14,12 +14,14 @@ work; reach for the SDK when building custom applications, CI/CD automation, or 
 
 1. Install the SDK for your language (Python 3.10+ or TypeScript) and set an API key from the
    Console.
-2. Write a minimal agent that performs a real task on a small project — for example, "find all
-   TODO comments and summarize them" — using only the tools it needs (`Read`, `Glob`, `Grep`).
-3. Tighten it: set a permission mode, add a `PostToolUse` hook that logs file changes, and restrict
-   `allowedTools`.
-4. Return **structured output** (a JSON schema / typed result) and consume it in your script.
-5. Optionally add a **subagent** definition and have the main agent delegate to it.
+2. Ask Claude Code to write a minimal agent script (using the SDK) that performs a real task on a
+   small project — for example, "find all TODO comments and summarize them" — using only the
+   tools it needs (`Read`, `Glob`, `Grep`).
+3. Have it tighten the script: set a permission mode, add a `PostToolUse` hook that logs file
+   changes, and restrict `allowedTools`.
+4. Ask it to return **structured output** (a JSON schema / typed result) that your script
+   consumes.
+5. Optionally have it add a **subagent** definition so the main agent delegates to it.
 6. Compare the experience to `claude -p`: when would you reach for the SDK instead of the CLI?
 
 ## Success Criteria

@@ -23,16 +23,16 @@ third-party service.
    scaffold both halves of the stack. Review the plan and push back on anything beyond what you
    need (in particular: no hosting/deployment integration, no third-party UI kit — plain Tailwind
    is enough).
-2. Approve the plan and let the agent execute the **frontend** first. Establish a separation
+2. Approve the plan and let the agent execute the **frontend** first, including a separation
    between a **public area** (for sign-in/registration later) and an **authenticated application
    area** (the main shell), using route groups.
-3. Configure Tailwind and confirm one sample styled element renders.
+3. Have the agent configure Tailwind and confirm one sample styled element renders.
 4. Let the agent scaffold the **backend**: a PHP project with Slim, a `public/index.php` entry
    point, and a SQLite connection via PDO. Add one throwaway `/health` route.
 5. **Verify both halves independently, fully offline**: start the frontend dev server and open it
    in a browser; start the backend (`php -S 0.0.0.0:8080 -t public`) and confirm `/health`
    responds.
-6. Review the changes and make your first commit with a clear message.
+6. Review the changes, then ask the agent to make the first commit with a message you approve.
 
 ## Success Criteria
 

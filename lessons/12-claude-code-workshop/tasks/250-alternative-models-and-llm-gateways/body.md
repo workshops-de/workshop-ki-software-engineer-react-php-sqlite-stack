@@ -25,7 +25,8 @@ third-party or local models with full feature parity.
    OpenAI-compatible or local model with full feature parity?
 4. Evaluate **benefits, limitations, and trade-offs** for a concrete constraint (for example, "we
    must keep all traffic inside our cloud account and track per-team spend").
-5. Write a short recommendation for that constraint, citing the relevant configuration.
+5. Ask the agent to draft a short recommendation for that constraint, citing the relevant
+   configuration.
 6. Optionally, if you have access, set `ANTHROPIC_BASE_URL` against a sanctioned gateway and
    confirm a session connects.
 

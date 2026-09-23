@@ -24,11 +24,11 @@ the affected user can see in the app.
 1. State the **transitions** to the agent: checking out an available book marks it `checked_out`
    and records who did it; returning it marks it `available` again. Confirm the agent restates
    them correctly.
-2. Implement checkout and return as PHP endpoints that validate the current state (you can't check
-   out an already-checked-out book), **authorize** (only the person who checked a book out may
-   return it), persist the new state, and insert an activity-log row.
-3. Build the UI: a checkout/return button on the book detail page with clear feedback, and a
-   simple "recent activity" list showing the last few log entries.
+2. Have the agent implement checkout and return as PHP endpoints that validate the current state
+   (you can't check out an already-checked-out book), **authorize** (only the person who checked
+   a book out may return it), persist the new state, and insert an activity-log row.
+3. Have it build the UI: a checkout/return button on the book detail page with clear feedback,
+   and a simple "recent activity" list showing the last few log entries.
 4. Verify with two seeded accounts: one checks a book out, confirm the other account cannot return
    it, then confirm the original account can.
 5. Reflect: what would break if the state check and the authorization check happened in the wrong

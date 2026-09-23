@@ -12,14 +12,14 @@ commit, and so on. Because they run every time, regardless of what the model dec
 
 ## Steps
 
-1. Add a **post-edit hook** that runs when files are written or edited and automatically formats
-   the changed file(s) and runs a fast type-check.
-2. Add a **safety hook** that blocks reading or writing sensitive paths (environment files, key
-   material).
+1. Ask the agent to add a **post-edit hook** that runs when files are written or edited and
+   automatically formats the changed file(s) and runs a fast type-check.
+2. Have it add a **safety hook** that blocks reading or writing sensitive paths (environment
+   files, key material).
 3. Trigger them: make a trivial edit and confirm formatting/type-checking run on their own; then
    ask the agent to read an environment file and confirm it is blocked.
 4. Reflect on why these guarantees are stronger as hooks than as lines in your project memory.
-5. Optionally add a pre-commit hook that runs lint and aborts on failure.
+5. Optionally ask it to add a pre-commit hook that runs lint and aborts on failure.
 
 ## Success Criteria
 

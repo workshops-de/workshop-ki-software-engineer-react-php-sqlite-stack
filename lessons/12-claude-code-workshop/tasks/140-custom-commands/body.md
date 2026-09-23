@@ -15,11 +15,11 @@ command is something **you** trigger deliberately.
 1. Choose a small, frequent action to codify — for example, "commit the current changes with a
    well-formed message following our convention," or "review the current changes for bugs and
    risks."
-2. Author it as a **custom command**, written as a clear prompt the agent will run.
-3. Add an **argument** to one command and use it to change the command's behaviour (for example, a
+2. Ask the agent to **draft it as a custom command** — a clear prompt file it will run.
+3. Have it add an **argument** to one command that changes the command's behaviour (for example, a
    scope or focus area).
-4. Invoke your command(s) on real changes in your project and refine the wording until the output
-   is consistently what you want.
+4. Invoke your command(s) on real changes in your project, then ask the agent to refine the
+   wording until the output is consistently what you want.
 5. Reflect: which of your repeated requests are better as commands, and which as skills?
 
 ## Success Criteria

@@ -29,9 +29,9 @@ matters most.
    user id in `$_SESSION`), a `/logout` endpoint (`session_destroy()`), and a `/me` endpoint that
    returns the current user or a 401. Any endpoint behind auth must check `$_SESSION['user_id']`
    and reject with 401 if it's missing.
-2. Configure the session cookie explicitly rather than trusting PHP's defaults: httpOnly, a
-   `SameSite` setting appropriate for two `localhost` ports, and `session.use_strict_mode`.
-   Add the matching CORS headers on the backend (`Access-Control-Allow-Origin` set to the
+2. Ask the agent to configure the session cookie explicitly rather than trusting PHP's defaults:
+   httpOnly, a `SameSite` setting appropriate for two `localhost` ports, and
+   `session.use_strict_mode`. Have it add the matching CORS headers on the backend (`Access-Control-Allow-Origin` set to the
    frontend's exact origin — never `*` when credentials are involved — plus
    `Access-Control-Allow-Credentials: true`).
 3. On the **frontend**, ask the agent to send `credentials: 'include'` on every request to the

@@ -20,12 +20,12 @@ should stay distinct.
    equivalent).
 2. Hunt for ambiguity: ask the agent to list terms that are unclear or could be confused, and
    resolve each into a single agreed definition.
-3. Produce a **glossary** of the core entities and add it to your project memory so future
-   sessions stay aligned.
-4. Sketch the **entity model**: entities, their key attributes, the relationships between them
-   (including which are optional), and the states an entity can be in.
-5. Identify any constraints that matter (for example, a book's ISBN should be unique) and note
-   them for the database design that follows.
+3. Have the agent produce a **glossary** of the core entities and add it to your project memory
+   so future sessions stay aligned.
+4. Have the agent sketch the **entity model**: entities, their key attributes, the relationships
+   between them (including which are optional), and the states an entity can be in.
+5. Ask it to identify any constraints that matter (for example, a book's ISBN should be unique)
+   and note them for the database design that follows.
 6. Confirm the model against the brief end to end before moving on.
 
 ## Success Criteria

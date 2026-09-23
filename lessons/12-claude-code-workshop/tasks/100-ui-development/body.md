@@ -17,23 +17,25 @@ as you already built for the book list); **writes** happen by `POST`/`PUT`-ing t
 that validates input, persists to SQLite, and returns the updated resource. Validation rules
 should exist in exactly one place *per side* — a Zod schema on the frontend for instant form
 feedback, and the equivalent checks in PHP because the frontend can never be trusted to have run
-them. Keep the UI plain: hand-rolled components styled with Tailwind utility classes, no
+them. Keep the UI plain: agent-generated components styled with Tailwind utility classes, no
 component-registry CLI.
 
 ## Steps
 
 1. Plan the **books** feature covering **list, detail, create, and edit**. Decide the list's
-   search, filter, and sort behaviour (you already have a starting point in `app/frontend`).
-2. Implement **reads** by fetching from the corresponding PHP endpoint; implement **writes** by
-   calling a PHP endpoint that validates input, persists via PDO, and returns the
+   search, filter, and sort behaviour (you already have a starting point in `app/frontend`), then
+   hand that plan to the agent.
+2. Have the agent implement **reads** by fetching from the corresponding PHP endpoint, and
+   **writes** by calling a PHP endpoint that validates input, persists via PDO, and returns the
    updated/created resource as JSON.
-3. Build the screens with plain, hand-written components, including a form that surfaces
-   validation errors clearly (both the frontend's Zod errors and any error the backend returns).
+3. Have it build the screens with plain components, including a form that surfaces validation
+   errors clearly (both the frontend's Zod errors and any error the backend returns).
 4. Verify the whole slice in the browser: create a book, view it, edit it, and see the list
    update.
-5. Once the shape feels solid, apply the **same shape** to a second, smaller entity (for example,
-   reviews on a book) to prove the pattern reuses cleanly. Note where the only differences are.
-6. Capture the feature pattern in your project memory for future reuse.
+5. Once the shape feels solid, ask the agent to apply the **same shape** to a second, smaller
+   entity (for example, reviews on a book) to prove the pattern reuses cleanly. Note where the
+   only differences are.
+6. Ask it to capture the feature pattern in your project memory for future reuse.
 
 ## Success Criteria
 

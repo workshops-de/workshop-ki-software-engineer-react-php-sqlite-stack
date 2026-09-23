@@ -15,15 +15,15 @@ and the agent can also accumulate its own memory of useful facts as it works.
 
 ## Steps
 
-1. Use `/init` to generate a first-draft `CLAUDE.md`, then read what it produced.
-2. **Curate** it down to high-value facts: your stack and versions, architectural rules, the
-   commands that matter (run, build, lint, type-check), a short domain glossary, and a review
-   checklist.
-3. Delete anything generic the model already knows. Aim for signal over volume.
+1. Use `/init` to have the agent generate a first-draft `CLAUDE.md`, then read what it produced.
+2. Ask the agent to **curate** it down to high-value facts: your stack and versions,
+   architectural rules, the commands that matter (run, build, lint, type-check), a short domain
+   glossary, and a review checklist.
+3. Ask it to delete anything generic the model already knows. Aim for signal over volume.
 4. Open a **fresh** session and ask a question whose answer depends on your memory file. Confirm
    the agent follows your conventions.
-5. Add a **subdirectory** memory file for one area of your project and verify it loads only when
-   working there.
+5. Ask the agent to add a **subdirectory** memory file for one area of your project and verify it
+   loads only when working there.
 6. Reflect on what belongs in memory versus what belongs in a one-off prompt.
 
 ## Success Criteria

@@ -20,14 +20,15 @@ referenced by path — no cloud storage involved.
 1. Before implementing, tell the agent the **constraint** clearly: reading the picked file and
    rendering a preview is client-only and cannot be server-rendered. Ask it to plan within that
    constraint.
-2. Implement the picker and preview: selecting a file shows an immediate preview without a round
-   trip to the backend.
-3. Add basic **client-side guardrails**: reject files above a size limit and anything that isn't
-   an image type, with a clear error message.
-4. Wire up the **upload**: submitting the form sends the image to a PHP endpoint that validates
-   it again (never trust the client's checks alone), stores it on local disk, and returns a path
-   the frontend can render.
-5. Integrate the upload into the book create/edit screens without breaking the rest of the app.
+2. Have the agent implement the picker and preview: selecting a file should show an immediate
+   preview without a round trip to the backend.
+3. Ask it to add basic **client-side guardrails**: reject files above a size limit and anything
+   that isn't an image type, with a clear error message.
+4. Have the agent wire up the **upload**: submitting the form should send the image to a PHP
+   endpoint that validates it again (never trust the client's checks alone), stores it on local
+   disk, and returns a path the frontend can render.
+5. Ask it to integrate the upload into the book create/edit screens without breaking the rest of
+   the app.
 6. Verify interactively: pick a file, see the instant preview, save, reload the page, and confirm
    the saved cover still renders from the local path.
 7. Reflect on how stating the constraint first changed the agent's approach.
