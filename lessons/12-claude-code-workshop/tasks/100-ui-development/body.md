@@ -7,7 +7,7 @@ it, so every feature you add stays consistent.
 
 ## Prerequisites
 
-- Recommended: `frontend-design`, `react-best-practices`
+- None external.
 
 ## Background
 

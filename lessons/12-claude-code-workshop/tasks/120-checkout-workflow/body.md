@@ -8,7 +8,7 @@ cleanly to the write path.
 
 ## Prerequisites
 
-- Recommended: `react-best-practices`
+- None external.
 
 ## Background
 

@@ -6,11 +6,9 @@ You delegate the implementation, but you own the security properties of what shi
 
 ## Prerequisites
 
-- Recommended skills: `react-best-practices`
-- No dedicated skill covers PHP sessions — rely on the linked docs below. No extra package
-  install is needed: everything here is PHP's built-in `session_*` functions plus
-  `password_hash()`/`password_verify()`, already available in the `app/backend` scaffold from
-  task 060.
+- None external. No extra package install is needed: everything here is PHP's built-in
+  `session_*` functions plus `password_hash()`/`password_verify()`, already available in the
+  `app/backend` scaffold from task 060 — rely on the linked docs below.
 
 ## Background
 
